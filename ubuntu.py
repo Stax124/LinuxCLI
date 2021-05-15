@@ -4,7 +4,7 @@ import sys
 try:
     import prompt_toolkit
 except ImportError:
-    subprocess.run([f"{sys.executable} -m pip install prompt-toolkit"])
+    subprocess.run([f"{sys.executable} -m pip install prompt-toolkit"], shell=True)
 
 from prompt_toolkit.shortcuts import (checkboxlist_dialog, input_dialog,
                                       message_dialog, radiolist_dialog)
@@ -171,3 +171,5 @@ while True:
             subprocess.run(["sudo systemctl status openvpn"], shell=True)
     elif main_result == Switch.QUIT:
         exit(0)
+        
+    subprocess.run("pause")
